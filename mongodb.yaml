@@ -1,4 +1,4 @@
-- name: configure mongodb service_mgr
+- name: configure mongodb server
   become: yes
   hosts: mongodb
   tasks:
