@@ -66,23 +66,26 @@
       name: mongodb-mongosh
       state: present
 
-  - name: load products data
-    ansible.builtin.shell:
-      file: "/app/master-data.js"
-      idempotent: yes
-      login_host: mongodb.3techops.in    
-  
   - name: check products loaded or not
     ansible.builtin.command: mongosh --host mongodb.3techops.in --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
     register: catalogue_output
 
   - name: print catalogue output
     ansible.builtin.debug:
-      msg: "{{ catalogue_output }}" 
-
+      msg: "{{ catalogue_output }}"
+      
+      
   - name: load products
     ansible.builtin.shell: mongosh --host mongodb.3techops.in </app/db/master-data.js
     when: catalogue_output.stdout | int < 0
+
+  
+  
+  
+
+  
+
+  
 
 
 
