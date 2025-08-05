@@ -1,4 +1,4 @@
-- name: configure catalogue coponent
+- name: configure catalogue component
   hosts: catalogue
   become: yes
   tasks:
@@ -55,6 +55,20 @@
       name: catalogue
       state: started
       enabled: yes
+
+  - name: copy mongodb repo
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo    
+
+  - name: install mongod client
+    ansible.builtin.dnf:
+      name: mongodb-mongosh
+      state: present
+
+
+  
+
 
 
 
