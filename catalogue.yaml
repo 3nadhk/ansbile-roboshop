@@ -67,7 +67,7 @@
       state: present
 
   - name: load products data
-    community.mongodb.mongodb_shell:
+    ansible.builtin.shell:
       file: "/app/master-data.js"
       idempotent: yes
       login_host: mongodb.3techops.in    
@@ -81,9 +81,9 @@
       msg: "{{ catalogue_output }}" 
 
   - name: load products
-    ansible.builtin.command: mongosh --host mongodb.3techops.in </app/db/master-data.js
-    when: catalogue_output.stdout < 0
-    
+    ansible.builtin.shell: mongosh --host mongodb.3techops.in </app/db/master-data.js
+    when: catalogue_output.stdout | int < 0
+
 
 
 
