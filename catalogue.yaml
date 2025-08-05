@@ -35,6 +35,11 @@
       src: /tmp/catalogue.zip
       dest: /app/
       remote_src: yes # this means files already exist on the remote server
+  
+  - name: install dependencies
+    community.general.npm:
+    path: /app
+    
 
   - name: copy catalogue service to system directory
     ansible.builtin.copy:
