@@ -9,7 +9,7 @@
     ansible.builtin.command: dnf module enable nodejs:20 -y
 
   - name: Install nodejs
-    ansbile.builtin.dnf:
+    ansibile.builtin.dnf:
       name: nodejs
       state: present
 
@@ -35,7 +35,7 @@
       src: /tmp/catalogue.zip
       dest: /app/
 
-      
+
 
     
 
