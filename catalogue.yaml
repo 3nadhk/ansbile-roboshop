@@ -73,7 +73,7 @@
       login_host: mongodb.3techops.in    
   
   - name: check products loaded or not
-    ansible.builtin.command: mongosh --host mongodb.3techops.in --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
+    ansible.builtin.command: mongosh --host mongodb.3techops.in --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
     register: catalogue_output
 
   - name: print catalogue output
