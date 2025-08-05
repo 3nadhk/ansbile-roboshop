@@ -66,6 +66,12 @@
       name: mongodb-mongosh
       state: present
 
+  - name: load products data
+    community.mongodb.mongodb_shell:
+      file: "/app/master-data.js"
+      idempotent: yes
+      login_host: mongodb.3techops.in    
+  
 
   
 
