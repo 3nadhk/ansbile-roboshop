@@ -13,8 +13,8 @@
       name: nodejs
       state: present
 
-  - name: create robopshop system cart
-    ansible.builtin.cart:
+  - name: create roboshop system user
+    ansible.builtin.user:
       name: roboshop
       shell: /sbin/nologin
       system: true
@@ -33,7 +33,7 @@
   - name: extrat cart code # This module thinks file exist on ansbile control server, needs to extract on the remote machine
     ansible.builtin.unarchive:
       src: /tmp/cart.zip
-      dest: /app/
+      dest: /app
       remote_src: yes # this means files already exist on the remote server
   
   - name: install dependencies
