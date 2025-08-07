@@ -29,6 +29,7 @@
   #   ansible.builtin.command: redis-server /etc/redis/redis.conf --test
   #   register: redis_config_test
   #   failed_when: "'Configuration OK' not in redis_config_test.stdout"
+  # this file doesn't change the line protected-mode to no...Did that manual in server for time being
 
   - name: enable and start redis
     ansible.builtin.service:
