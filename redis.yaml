@@ -25,10 +25,10 @@
       regexp: 'protected-mode'
       line: protected-mode no
 
-  # - name: Test Redis configuration
-  #   ansible.builtin.command: redis-server /etc/redis/redis.conf --test
-  #   register: redis_config_test
-  #   failed_when: "'Configuration OK' not in redis_config_test.stdout"
+  - name: Test Redis configuration
+    ansible.builtin.command: redis-server /etc/redis/redis.conf --test
+    register: redis_config_test
+    failed_when: "'Configuration OK' not in redis_config_test.stdout"
 
   - name: enable and start redis
     ansible.builtin.service:
