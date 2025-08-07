@@ -30,7 +30,7 @@
       state: direcotry
 
   - name: download frontend code
-    ansbile.builtin.get_url:
+    ansible.builtin.get_url:
     url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
     dest: /tmp/frontend.zip
 
@@ -49,7 +49,7 @@
     ansible.builtin.copy:
       src: nginx.conf
       dest: /etc/nginx/nginx.conf
-      
+
 
 
 
