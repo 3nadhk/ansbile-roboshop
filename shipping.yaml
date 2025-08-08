@@ -97,7 +97,7 @@
       login_password: RoboShop@1
       login_host: mysql.3techops.in
       state: import
-      target: /tmp/dump.sql
+      target: "{{ item }}"
     loop:
     - /app/db/schema.sql
     - /app/db/app-user.sql
