@@ -83,12 +83,12 @@
   #     name: mysql
   #     state: installed
 
-  - name: connect to mysql using app user
-    community.mysql.mysql_info:
-      login_user: shipping
-      login_password: RoboShop@1
-      login_host: mysql.3techops.in
-      login_db: cities
+  # - name: connect to mysql using app user
+  #   community.mysql.mysql_info:
+  #     login_user: shipping
+  #     login_password: RoboShop@1
+  #     login_host: mysql.3techops.in
+  #     login_db: cities
 
   - name: import data
     community.mysql.mysql_db:
@@ -101,7 +101,11 @@
     - /app/db/schema.sql
     - /app/db/app-user.sql
     - /app/bdb/master-data.sql
-    
+
+  - name: reestart shipping
+    ansible.builtin.service:
+      state: restart
+
 
       
 
