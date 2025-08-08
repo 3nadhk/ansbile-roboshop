@@ -101,7 +101,7 @@
     loop:
     - /app/db/schema.sql
     - /app/db/app-user.sql
-    - /app/bdb/master-data.sql
+    - /app/db/master-data.sql
 
   - name: reestart shipping
     tags:
