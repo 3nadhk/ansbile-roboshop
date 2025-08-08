@@ -48,6 +48,20 @@
     args:
       chdir: /app
 
+  - name: copy payment service
+    ansible.builtin.copy:
+      name: payment.service
+      dest: /etc/systemd/system/payment.service
+
+  - name: enable and start payment
+    ansible.buitin.service:
+      name: payment
+      state: started
+      enabled: yes
+              
+
+
+
 
 
 
