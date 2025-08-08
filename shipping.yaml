@@ -91,8 +91,6 @@
   #     login_db: cities
 
   - name: import data
-    tags:
-    - import
     community.mysql.mysql_db:
       name: all
       login_user: root
@@ -106,6 +104,8 @@
     - /app/bdb/master-data.sql
 
   - name: reestart shipping
+    tags:
+    - import
     ansible.builtin.service:
       state: restart
 
