@@ -90,6 +90,21 @@
       login_host: mysql.3techops.in
       login_db: cities
 
+  - name: import data
+    community.mysql.mysql_db:
+      login_user: root
+      login_password: RoboShop@1
+      login_host: mysql.3techops.in
+      state: import
+      target: /tmp/dump.sql
+    loop:
+    - /app/db/schema.sql
+    - /app/db/app-user.sql
+    - /app/bdb/master-data.sql
+    
+
+      
+
 
 
 
