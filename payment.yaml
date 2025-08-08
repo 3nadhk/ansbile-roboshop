@@ -54,11 +54,11 @@
       dest: /etc/systemd/system/payment.service
 
   - name: enable and start payment
-    ansible.buitin.service:
+    ansible.builtin.service:
       name: payment
       state: started
       enabled: yes
-              
+
 
 
 
