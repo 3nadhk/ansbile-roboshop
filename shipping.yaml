@@ -29,7 +29,7 @@
   - name: download shipping code
     ansible.builtin.get_url:
       url: https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip
-      dest: /tmp/catalogue.zip
+      dest: /tmp/shipping.zip
 
   - name: extrat shipping code # This module thinks file exist on ansbile control server, needs to extract on the remote machine
     ansible.builtin.unarchive:
@@ -42,6 +42,8 @@
     ansible.builtin.command: mvn clean package
     args:
       chdir: /app
-      
+
+  - name: rename  
+
 
 
